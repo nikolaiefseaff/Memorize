@@ -12,7 +12,7 @@ struct ContentView: View {
 
     var body: some View {
         HStack {
-            ForEach(viewModel.cards) { card in
+            ForEach(viewModel.cards.shuffled()) { card in
                 CardView(card: card).onTapGesture {
                     viewModel.choose(card: card)
                 }
@@ -20,7 +20,7 @@ struct ContentView: View {
         }
         .padding()
         .foregroundColor(Color.orange)
-        .font(Font.largeTitle)
+        .font(viewModel.cards.count < 10 ? Font.largeTitle : Font.body)
     }
 }
 
@@ -37,6 +37,7 @@ struct CardView: View {
                 RoundedRectangle(cornerRadius: 10).fill(Color.orange)
             }
         }
+        .aspectRatio(0.66, contentMode: .fit)
     }
 }
 
