@@ -12,14 +12,19 @@ struct EmojiMemoryGameView: View {
     @ObservedObject var viewModel: EmojiMemoryGame
     
     var body: some View {
-        Grid(items: viewModel.cards) { card in
-            CardView(card: card).onTapGesture {
-                viewModel.choose(card: card)
+        VStack {
+            // TODO: Score from model
+            HeaderView(score: 150, themeName: viewModel.theme.name)
+                        
+            Grid(items: viewModel.cards) { card in
+                CardView(card: card).onTapGesture {
+                    viewModel.choose(card: card)
+                }
+                .padding(5)
             }
-            .padding(5)
+            .padding()
+            .foregroundColor(viewModel.theme.color)
         }
-        .padding()
-        .foregroundColor(Color.orange)
     }
 }
 
@@ -30,12 +35,13 @@ struct CardView: View {
         GeometryReader { geometry in
             ZStack {
                 if card.isFaceUp {
-                    RoundedRectangle(cornerRadius: cardCornerRadius).stroke().fill(Color.white)
-                    RoundedRectangle(cornerRadius: cardCornerRadius).stroke(lineWidth: edgeLineWidth)
+                    RoundedRectangle(cornerRadius: cardCornerRadius)
+                        .stroke(lineWidth: edgeLineWidth)
+                    //.fill(Color.yellow)
                     Text(card.content)
                 } else {
                     if !card.isMatched {
-                        RoundedRectangle(cornerRadius: cardCornerRadius).fill(Color.orange)
+                        RoundedRectangle(cornerRadius: cardCornerRadius).fill()
                     }
                 }
             }
@@ -46,7 +52,7 @@ struct CardView: View {
     // MARK: - Drawing Constants
     
     let cardCornerRadius: CGFloat = 10
-    let edgeLineWidth: CGFloat = 3
+    let edgeLineWidth: CGFloat = 4
     let fontScalar: CGFloat = 0.75
     
     func fontSize(for size: CGSize) -> CGFloat {
@@ -75,9 +81,10 @@ struct CardView: View {
 
 
 
+
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        let game = EmojiMemoryGame()
+        let game = EmojiMemoryGame(emojiTheme: .animal)
         EmojiMemoryGameView(viewModel: game)
     }
 }

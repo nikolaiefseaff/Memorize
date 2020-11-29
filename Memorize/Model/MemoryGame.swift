@@ -8,6 +8,7 @@
 import Foundation
 
 struct MemoryGame<CardContent> where CardContent: Equatable {
+    var theme: Theme
     var cards: Array<Card>
     var indexOfOnlyFaceUpCard: Int? {
         get { cards.indices.filter { cards[$0].isFaceUp }.only }
@@ -32,10 +33,12 @@ struct MemoryGame<CardContent> where CardContent: Equatable {
         }
     }
     
-    init(numberOfPairsOfCards: Int, cardContentFactory: (Int) -> CardContent)  {
+    init(themeSelected: EmojiTheme, cardContentFactory: (Int, Theme) -> CardContent)  {
+        theme = Theme(emojiTheme: themeSelected)
         cards = Array<Card>()
+        let numberOfPairsOfCards = theme.difficulty.getDifficulty()
         for pairIndex in 0..<numberOfPairsOfCards {
-            let content = cardContentFactory(pairIndex)
+            let content = cardContentFactory(pairIndex, theme)
             cards.append(Card(content: content, id: pairIndex*2))
             cards.append(Card(content: content, id: pairIndex*2+1))
         }
