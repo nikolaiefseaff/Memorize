@@ -57,7 +57,7 @@ struct Theme {
     }
 }
 
-enum EmojiTheme {
+enum EmojiTheme: CaseIterable {
     case aquarium
     case halloween
     case food

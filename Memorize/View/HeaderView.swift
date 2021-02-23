@@ -31,19 +31,25 @@ struct HeaderView: View {
                 }
                 .accentColor(Color.primary)
             }
-                        
+              
+            Text("Memorize")
+                .font(.largeTitle)
+                .fontWeight(.ultraLight)
+                .multilineTextAlignment(.center)
+                .padding(.horizontal)
+                .scaledToFill()
+
             ZStack {
                 RoundedRectangle(cornerRadius: 20)
-                    .stroke(lineWidth: 3)
+                    .stroke(lineWidth: 4)
                     .fill()
-                    .padding(5)
                 HStack {
-                    Text("Score")
                     Text(String(score))
                 }
+                .scaledToFit()
+                .padding(.horizontal)
             }
-            .padding(10)
-            
+            .frame(minWidth: 40, idealWidth: 50, maxWidth: 90, minHeight: 40, idealHeight: 50, maxHeight: 90, alignment: .trailing)
         }
         .frame(minWidth: 300, maxWidth: .infinity, minHeight: 50, idealHeight: 70, maxHeight: 90, alignment: .center)
         .padding()

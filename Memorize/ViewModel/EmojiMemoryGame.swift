@@ -16,12 +16,17 @@ class EmojiMemoryGame: ObservableObject {
         self.model = EmojiMemoryGame.createMemoryGame(emojiTheme: emojiTheme)
     }
     
+    init() {
+        let randomTheme = EmojiTheme.allCases.randomElement()!
+        self.model = EmojiMemoryGame.createMemoryGame(emojiTheme: randomTheme)
+    }
+    
     static func createMemoryGame(emojiTheme: EmojiTheme) -> MemoryGame<String> {
         return MemoryGame<String>(themeSelected: emojiTheme) { providedPairIndex, theme in
             theme.emojies[providedPairIndex]
         }
     }
-    
+            
     // MARK: - Access to the Model
     
     var cards: Array<MemoryGame<String>.Card> {
@@ -38,4 +43,9 @@ class EmojiMemoryGame: ObservableObject {
         model.choose(card: card)
     }
     
+    func newGame() {
+        let randomTheme = EmojiTheme.allCases.randomElement()!
+        self.model = EmojiMemoryGame.createMemoryGame(emojiTheme: randomTheme)
+    }
+        
 }

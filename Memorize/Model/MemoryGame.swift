@@ -33,6 +33,23 @@ struct MemoryGame<CardContent> where CardContent: Equatable {
         }
     }
     
+    mutating func newTheme() {
+        let randomTheme = EmojiTheme.allCases.randomElement()!
+        theme = randomTheme
+    }
+    
+    mutating func setupModel(withTheme themeSelected: EmojiTheme, cardContentFactory: (Int, Theme) -> CardContent)  {
+        theme = Theme(emojiTheme: themeSelected)
+        cards = Array<Card>()
+        let numberOfPairsOfCards = theme.difficulty.getDifficulty()
+        for pairIndex in 0..<numberOfPairsOfCards {
+            let content = cardContentFactory(pairIndex, theme)
+            cards.append(Card(content: content, id: pairIndex*2))
+            cards.append(Card(content: content, id: pairIndex*2+1))
+        }
+        cards.shuffle()
+    }
+    
     init(themeSelected: EmojiTheme, cardContentFactory: (Int, Theme) -> CardContent)  {
         theme = Theme(emojiTheme: themeSelected)
         cards = Array<Card>()

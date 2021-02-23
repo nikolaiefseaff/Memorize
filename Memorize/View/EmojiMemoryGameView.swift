@@ -22,8 +22,8 @@ struct EmojiMemoryGameView: View {
                 }
                 .padding(5)
             }
-            .padding()
             .foregroundColor(viewModel.theme.color)
+            .padding(.horizontal)
         }
     }
 }
