@@ -23,8 +23,8 @@ struct Theme {
             self.emojies = ["🐠", "🐟", "🐡", "🐙", "🦑", "🐬", "🦀", "🦈", "🐳", "🐚", "🐋"]
             self.color = Color.blue
             self.difficulty = .random(pairs: ProvidedDifficulty.easy.rawValue, maxPairsAllowed: self.emojies.count)
-        case .halloween:
-            self.name = "Halloween"
+        case .fall:
+            self.name = "Fall"
             self.emojies = ["🎃", "👻", "🍭", "🍬", "🍂", "🕸", "😱", "🦴"]
             self.color = Color.orange
             self.difficulty = .provided(pairs: ProvidedDifficulty.easy.rawValue, maxPairsAllowed: self.emojies.count)
@@ -59,7 +59,7 @@ struct Theme {
 
 enum EmojiTheme: CaseIterable {
     case aquarium
-    case halloween
+    case fall
     case food
     case animal
     case activity

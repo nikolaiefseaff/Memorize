@@ -18,9 +18,9 @@ struct HeaderView: View {
                     .scaledToFill()
                     .padding(5)
                 
-                Button(action: {
-                     viewModel.newGame()})
-                {
+                Button {
+                    viewModel.newGame()
+                } label: {
                     Image(systemName: "plus.square")
                         .font(.system(size: 40, weight: .regular))
                 }
@@ -46,8 +46,8 @@ struct HeaderView: View {
             }
             .frame(minWidth: 40, idealWidth: 50, maxWidth: 90, minHeight: 40, idealHeight: 50, maxHeight: 90, alignment: .trailing)
         }
-        .frame(minWidth: 300, maxWidth: .infinity, minHeight: 50, idealHeight: 70, maxHeight: 90, alignment: .center)
-        .padding()
+        .frame(minWidth: 300, maxWidth: .infinity, minHeight: 30, idealHeight: 45, maxHeight: 60, alignment: .center)
+        .padding(.all)
     }
 }
 
@@ -55,6 +55,6 @@ struct HeaderView_Previews: PreviewProvider {
     static var previews: some View {
         let game = EmojiMemoryGame(emojiTheme: .animal)
         HeaderView(viewModel: game)
-            .previewLayout(.fixed(width: 375, height: 100))
+            .previewLayout(.sizeThatFits)
     }
 }
