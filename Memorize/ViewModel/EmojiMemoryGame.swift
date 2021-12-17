@@ -37,12 +37,17 @@ class EmojiMemoryGame: ObservableObject {
         model.theme
     }
     
+    var score: Int {
+        model.score
+    }
+    
     // MARK: - Intent
     
     func choose(card: MemoryGame<String>.Card) {
         model.choose(card: card)
     }
     
+    //TODO
     func newGame() {
         let randomTheme = EmojiTheme.allCases.randomElement()!
         self.model = EmojiMemoryGame.createMemoryGame(emojiTheme: randomTheme)

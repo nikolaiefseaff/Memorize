@@ -8,13 +8,12 @@
 import SwiftUI
 
 struct EmojiMemoryGameView: View {
-    //@ObservedObject is a reactive wrapper. It will redraw each time it recieves a ".send()" from on VM
+    //@ObservedObject is a reactive wrapper. It will redraw each time it recieves a ".send()" from a VM
     @ObservedObject var viewModel: EmojiMemoryGame
     
     var body: some View {
         VStack {
-            // TODO: Score from model
-            HeaderView(score: 150, themeName: viewModel.theme.name)
+            HeaderView(viewModel: viewModel)
                         
             Grid(items: viewModel.cards) { card in
                 CardView(card: card).onTapGesture {

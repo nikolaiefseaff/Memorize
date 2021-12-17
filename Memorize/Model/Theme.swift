@@ -46,7 +46,7 @@ struct Theme {
         case .space:
             self.name = "Space"
             self.emojies = ["🚀", "👽", "🛰", "🌘", "🌖", "🌓", "🌒", "🌕", "🌑", "🪐", "🌎", "☀️"]
-            self.color = Color.black
+            self.color = Color.gray
             self.difficulty = .provided(pairs: ProvidedDifficulty.hard.rawValue, maxPairsAllowed: self.emojies.count)
         case .smiley:
             self.name = "Smilies"
