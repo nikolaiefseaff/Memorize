@@ -9,22 +9,28 @@ import SwiftUI
 
 struct EmojiMemoryGameView: View {
     //@ObservedObject is a reactive wrapper. It will redraw each time it recieves a ".send()" from a VM
-    @ObservedObject var viewModel: EmojiMemoryGame
+    @ObservedObject var game: EmojiMemoryGame
     
     var body: some View {
         VStack {
-            HeaderView(viewModel: viewModel)
-                        
-            Grid(items: viewModel.cards) { card in
-                CardView(card: card).onTapGesture {
-                    viewModel.choose(card: card)
-                }
-                .padding(5)
-            }
-            .foregroundColor(viewModel.theme.color)
-            .padding(.horizontal)
+            HeaderView(game: game)
             
-            FooterView(viewModel: viewModel)
+            ScrollView {
+                LazyVGrid(columns: [GridItem(.adaptive(minimum: 90, maximum: 500))]) {
+                    ForEach(game.cards) { card in
+                        CardView(card: card)
+                            .aspectRatio(2/3, contentMode: .fill)
+                            .onTapGesture {
+                                game.choose(card: card)
+                            }
+                    }
+                    .padding(.all, 3.0)
+                    .foregroundColor(game.theme.color)
+                }
+                .scaledToFill()
+            }
+            
+            FooterView(game: game)
         }
     }
 }
@@ -38,7 +44,6 @@ struct CardView: View {
                 if card.isFaceUp {
                     RoundedRectangle(cornerRadius: cardCornerRadius)
                         .stroke(lineWidth: edgeLineWidth)
-                    //.fill(Color.yellow)
                     Text(card.content)
                 } else {
                     if !card.isMatched {
@@ -86,6 +91,7 @@ struct CardView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         let game = EmojiMemoryGame(emojiTheme: .animal)
-        EmojiMemoryGameView(viewModel: game)
+        EmojiMemoryGameView(game: game)
+            .previewInterfaceOrientation(.portrait)
     }
 }

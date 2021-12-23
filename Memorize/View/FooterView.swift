@@ -9,11 +9,11 @@ import SwiftUI
 
 struct FooterView: View {
     //@ObservedObject is a reactive wrapper. It will redraw each time it recieves a ".send()" from a VM
-    @ObservedObject var viewModel: EmojiMemoryGame
+    @ObservedObject var game: EmojiMemoryGame
     
     var body: some View {
         ScrollView (.horizontal) {
-            emojiBar(viewModel: viewModel)
+            emojiBar(viewModel: game)
         }
     }
 }
@@ -65,7 +65,7 @@ struct newEmojiGameButton: View {
             .scaledToFit()
             Text(emojiLabel)
                 .accentColor(Color.primary)
-                .font(.system(size: 15, weight: .bold))
+                .font(.system(size: 15, weight: .light))
         }
         .padding(.horizontal)
         .frame(minWidth: 100, idealWidth: 125, maxWidth: 130)
@@ -90,7 +90,7 @@ struct newEmojiGameButton: View {
 struct FooterView_Previews: PreviewProvider {
     static var previews: some View {
         let game = EmojiMemoryGame(emojiTheme: .animal)
-        FooterView(viewModel: game)
+        FooterView(game: game)
             .previewLayout(.sizeThatFits)
     }
 }

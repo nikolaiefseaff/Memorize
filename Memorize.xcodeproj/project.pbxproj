@@ -10,8 +10,6 @@
 		BC664AAD276D2661003E447D /* FooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC664AAC276D2661003E447D /* FooterView.swift */; };
 		F62D56152571B2F200245DCC /* Array+Only.swift in Sources */ = {isa = PBXBuildFile; fileRef = F62D56142571B2F200245DCC /* Array+Only.swift */; };
 		F6673CA82571FC77009406AC /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6673CA72571FC77009406AC /* Theme.swift */; };
-		F6C0A3FE2561CEB2007CECE7 /* Grid.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C0A3FD2561CEB2007CECE7 /* Grid.swift */; };
-		F6C0A4022561D34C007CECE7 /* GridLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C0A4012561D34C007CECE7 /* GridLayout.swift */; };
 		F6C0A4052561D90F007CECE7 /* Array+Identifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C0A4042561D90F007CECE7 /* Array+Identifiable.swift */; };
 		F6D403202573599D002E0D10 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D4031F2573599D002E0D10 /* HeaderView.swift */; };
 		F6F801DE255F201500FBE2F0 /* MemorizeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F801DD255F201500FBE2F0 /* MemorizeApp.swift */; };
@@ -26,8 +24,6 @@
 		BC664AAC276D2661003E447D /* FooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FooterView.swift; sourceTree = "<group>"; };
 		F62D56142571B2F200245DCC /* Array+Only.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Only.swift"; sourceTree = "<group>"; };
 		F6673CA72571FC77009406AC /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
-		F6C0A3FD2561CEB2007CECE7 /* Grid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Grid.swift; sourceTree = "<group>"; };
-		F6C0A4012561D34C007CECE7 /* GridLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GridLayout.swift; sourceTree = "<group>"; };
 		F6C0A4042561D90F007CECE7 /* Array+Identifiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Identifiable.swift"; sourceTree = "<group>"; };
 		F6D4031F2573599D002E0D10 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		F6F801DA255F201500FBE2F0 /* Memorize.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Memorize.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -63,8 +59,6 @@
 		F62D561A2571F8CD00245DCC /* View */ = {
 			isa = PBXGroup;
 			children = (
-				F6C0A3FD2561CEB2007CECE7 /* Grid.swift */,
-				F6C0A4012561D34C007CECE7 /* GridLayout.swift */,
 				F6F801DF255F201500FBE2F0 /* EmojiMemoryGameView.swift */,
 				F6D4031F2573599D002E0D10 /* HeaderView.swift */,
 				BC664AAC276D2661003E447D /* FooterView.swift */,
@@ -201,10 +195,8 @@
 				F6F801E0255F201500FBE2F0 /* EmojiMemoryGameView.swift in Sources */,
 				F6F801DE255F201500FBE2F0 /* MemorizeApp.swift in Sources */,
 				F6673CA82571FC77009406AC /* Theme.swift in Sources */,
-				F6C0A4022561D34C007CECE7 /* GridLayout.swift in Sources */,
 				F6D403202573599D002E0D10 /* HeaderView.swift in Sources */,
 				BC664AAD276D2661003E447D /* FooterView.swift in Sources */,
-				F6C0A3FE2561CEB2007CECE7 /* Grid.swift in Sources */,
 				F6C0A4052561D90F007CECE7 /* Array+Identifiable.swift in Sources */,
 				F6F8020D255F38EA00FBE2F0 /* EmojiMemoryGame.swift in Sources */,
 				F62D56152571B2F200245DCC /* Array+Only.swift in Sources */,

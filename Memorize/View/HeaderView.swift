@@ -9,17 +9,17 @@ import SwiftUI
 
 struct HeaderView: View {
     //@ObservedObject is a reactive wrapper. It will redraw each time it recieves a ".send()" from a VM
-    @ObservedObject var viewModel: EmojiMemoryGame
+    @ObservedObject var game: EmojiMemoryGame
         
     var body: some View {
         HStack {
             VStack {
-                Text(viewModel.theme.name)
+                Text(game.theme.name)
                     .scaledToFill()
                     .padding(5)
                 
                 Button {
-                    viewModel.newGame()
+                    game.newGame()
                 } label: {
                     Image(systemName: "plus.square")
                         .font(.system(size: 40, weight: .regular))
@@ -39,7 +39,7 @@ struct HeaderView: View {
                     .stroke(lineWidth: 4)
                     .fill()
                 HStack {
-                    Text(String(viewModel.score))
+                    Text(String(game.score))
                 }
                 .scaledToFit()
                 .padding(.horizontal)
@@ -54,7 +54,7 @@ struct HeaderView: View {
 struct HeaderView_Previews: PreviewProvider {
     static var previews: some View {
         let game = EmojiMemoryGame(emojiTheme: .animal)
-        HeaderView(viewModel: game)
+        HeaderView(game: game)
             .previewLayout(.sizeThatFits)
     }
 }

@@ -10,6 +10,7 @@ import SwiftUI
 class EmojiMemoryGame: ObservableObject {
     //@Published is a reactive wrapper. It will give us 'objectWillChange.send()' for free whenever this var changes. That way, dont have to add many extra lines in each "Intent"
     @Published private var model: MemoryGame<String>
+    typealias Card = MemoryGame<String>.Card
     
     // MARK: - Init
     init(emojiTheme: EmojiTheme) {
@@ -28,8 +29,8 @@ class EmojiMemoryGame: ObservableObject {
     }
             
     // MARK: - Access to the Model
-    
-    var cards: Array<MemoryGame<String>.Card> {
+    // View-only computed vars of the model
+    var cards: Array<Card> {
         model.cards
     }
     
@@ -47,7 +48,7 @@ class EmojiMemoryGame: ObservableObject {
     
     // MARK: - Intent
     
-    func choose(card: MemoryGame<String>.Card) {
+    func choose(card: Card) {
         model.choose(card: card)
     }
     
