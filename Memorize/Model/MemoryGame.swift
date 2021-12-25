@@ -43,7 +43,7 @@ struct MemoryGame<CardContent> where CardContent: Equatable {
     //setup game
     init(themeSelected: EmojiTheme, cardContentFactory: (Int, Theme) -> CardContent)  {
         theme = Theme(emojiTheme: themeSelected)
-        cards = Array<Card>()
+        cards = []
         let numberOfPairsOfCards = theme.difficulty.getDifficulty()
         for pairIndex in 0..<numberOfPairsOfCards {
             let content = cardContentFactory(pairIndex, theme)

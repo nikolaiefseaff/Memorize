@@ -15,20 +15,7 @@ struct EmojiMemoryGameView: View {
         VStack {
             HeaderView(game: game)
             
-            ScrollView {
-                LazyVGrid(columns: [GridItem(.adaptive(minimum: 90, maximum: 500))]) {
-                    ForEach(game.cards) { card in
-                        CardView(card: card)
-                            .aspectRatio(2/3, contentMode: .fill)
-                            .onTapGesture {
-                                game.choose(card: card)
-                            }
-                    }
-                    .padding(.all, 3.0)
-                    .foregroundColor(game.theme.color)
-                }
-                .scaledToFill()
-            }
+            GameView(game: game)
             
             FooterView(game: game)
         }
@@ -59,7 +46,7 @@ struct CardView: View {
     
     let cardCornerRadius: CGFloat = 10
     let edgeLineWidth: CGFloat = 4
-    let fontScalar: CGFloat = 0.75
+    let fontScalar: CGFloat = 0.80
     
     func fontSize(for size: CGSize) -> CGFloat {
         min(size.width, size.height) * fontScalar

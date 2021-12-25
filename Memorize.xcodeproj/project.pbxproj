@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BC0F699F2775291E0019F109 /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC0F699E2775291E0019F109 /* GameView.swift */; };
 		BC664AAD276D2661003E447D /* FooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC664AAC276D2661003E447D /* FooterView.swift */; };
 		F62D56152571B2F200245DCC /* Array+Only.swift in Sources */ = {isa = PBXBuildFile; fileRef = F62D56142571B2F200245DCC /* Array+Only.swift */; };
 		F6673CA82571FC77009406AC /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6673CA72571FC77009406AC /* Theme.swift */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BC0F699E2775291E0019F109 /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
 		BC664AAC276D2661003E447D /* FooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FooterView.swift; sourceTree = "<group>"; };
 		F62D56142571B2F200245DCC /* Array+Only.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Only.swift"; sourceTree = "<group>"; };
 		F6673CA72571FC77009406AC /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
@@ -60,6 +62,7 @@
 			isa = PBXGroup;
 			children = (
 				F6F801DF255F201500FBE2F0 /* EmojiMemoryGameView.swift */,
+				BC0F699E2775291E0019F109 /* GameView.swift */,
 				F6D4031F2573599D002E0D10 /* HeaderView.swift */,
 				BC664AAC276D2661003E447D /* FooterView.swift */,
 			);
@@ -195,6 +198,7 @@
 				F6F801E0255F201500FBE2F0 /* EmojiMemoryGameView.swift in Sources */,
 				F6F801DE255F201500FBE2F0 /* MemorizeApp.swift in Sources */,
 				F6673CA82571FC77009406AC /* Theme.swift in Sources */,
+				BC0F699F2775291E0019F109 /* GameView.swift in Sources */,
 				F6D403202573599D002E0D10 /* HeaderView.swift in Sources */,
 				BC664AAD276D2661003E447D /* FooterView.swift in Sources */,
 				F6C0A4052561D90F007CECE7 /* Array+Identifiable.swift in Sources */,

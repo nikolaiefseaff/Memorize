@@ -17,7 +17,7 @@ struct HeaderView: View {
                 Text(game.theme.name)
                     .scaledToFill()
                     .padding(5)
-                
+
                 Button {
                     game.newGame()
                 } label: {
@@ -32,7 +32,7 @@ struct HeaderView: View {
                 .fontWeight(.ultraLight)
                 .multilineTextAlignment(.center)
                 .padding(.horizontal)
-                .scaledToFill()
+                .scaledToFit()
 
             ZStack {
                 RoundedRectangle(cornerRadius: 20)
@@ -53,8 +53,7 @@ struct HeaderView: View {
 
 struct HeaderView_Previews: PreviewProvider {
     static var previews: some View {
-        let game = EmojiMemoryGame(emojiTheme: .animal)
-        HeaderView(game: game)
+        HeaderView(game: EmojiMemoryGame(emojiTheme: .animal))
             .previewLayout(.sizeThatFits)
     }
 }

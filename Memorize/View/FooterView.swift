@@ -61,7 +61,7 @@ struct newEmojiGameButton: View {
                 Image(systemName: emojiLabel)
                     .font(.system(size: 25, weight: .regular))
             }
-            .accentColor(Color.black)
+            .accentColor(Color.primary)
             .scaledToFit()
             Text(emojiLabel)
                 .accentColor(Color.primary)
@@ -89,8 +89,7 @@ struct newEmojiGameButton: View {
 
 struct FooterView_Previews: PreviewProvider {
     static var previews: some View {
-        let game = EmojiMemoryGame(emojiTheme: .animal)
-        FooterView(game: game)
+        FooterView(game: EmojiMemoryGame(emojiTheme: .animal))
             .previewLayout(.sizeThatFits)
     }
 }
